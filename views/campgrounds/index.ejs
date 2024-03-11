@@ -10,7 +10,28 @@
         <div class="row">
             <div class="col-md-4">
                 <% if (campground.images && campground.images.length) { %>
-                <img class="img-fluid" src="<%= campground.images[0].url %>" alt="">
+                <!-- <img class="img-fluid" src="<%= campground.images[0].url %>" alt=""> -->
+                <div id="campgroundCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <% campground.images.forEach((img, i)=> { %>
+                            <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
+                                <img src="<%= img.url %>" class="d-block w-100" alt="">
+                            </div>
+                        <% }) %>
+                    </div>
+                    <% if (campground.images.length> 1) { %>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#campgroundCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#campgroundCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    <% } %>
+                </div>
                 <% } else { %>
                 <!-- <img class="img-fluid" src="https://cdn.outsideonline.com/wp-content/uploads/2021/06/15/camping_fun_h.jpg" alt=""> -->
                 <img class="img-fluid" src="https://images.unsplash.com/photo-1607434472257-d9f8e57a643d?q=80&w=1772&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">

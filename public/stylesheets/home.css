@@ -30,8 +30,13 @@ body {
     border-bottom-color: white;
 }
 
-.btn-secondary, .btn-secondary:hover {
+.btn-secondary {
     color: #333;
     font-weight: 700;
     text-shadow: none;
+}
+
+.btn-secondary:hover {
+    color: #333;
+    text-decoration: underline 0.28rem rgba(188, 183, 183, 0.811);
 }

@@ -32,5 +32,6 @@
     "passport-local-mongoose": "^8.0.0",
     "sanitize-html": "^2.12.1"
   },
+  "devDependencies": {},
   "description": ""
 }
